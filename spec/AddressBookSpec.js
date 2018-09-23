@@ -15,4 +15,14 @@ describe("Address Book", () => {
     expect(addressBook.getContact(0)).not.toBeDefined();
   });
 });
-// testing git
+
+describe("Async Address Book", () => {
+  let addressBook = new AddressBook();
+  beforeEach(done => {
+    addressBook.getInitialContacts(() => done());
+  });
+  it("should grab initial contacts", () => {
+    expect(addressBook.initialComplete).toBe(true);
+    // done();
+  });
+});
